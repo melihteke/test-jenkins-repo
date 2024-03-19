@@ -3,20 +3,27 @@
 pipeline {
 
   agent {
-      docker {
-        file 'Dockerfile'
-      }
+    docker {
+      file 'Dockerfile'
     }
+  }
 
   triggers {
-    // https://www.jenkins.io/doc/book/pipeline/syntax/#cron-syntax
     // @midnight actually means some time between 12:00 AM and 2:59 AM.
     cron('H 22 15 * *')
-    }
+  }
 
   environment {
-    
-    //NAME = MELIHTEKE
+    // Grafana options
+    GF_SECURITY_ADMIN_USER = 'admin'
+    GF_SECURITY_ADMIN_PASSWORD = 'admin'
+    GF_INSTALL_PLUGINS = ''
+
+    // InfluxDB options
+    INFLUXDB_DB = 'influx'
+    INFLUXDB_ADMIN_USER = 'admin'
+    INFLUXDB_ADMIN_PASSWORD = 'admin'
+
     // Work in production environment
     PROD_ENVIRONMENT = true
 
@@ -30,13 +37,7 @@ pipeline {
     PYTHONUNBUFFERED = 1
   }
 
-  //options {
-    //buildDiscarder(logRotator(numToKeepStr: '100'))
-    //disableConcurrentBuilds()
-    //ansiColor('xterm')
-  //}
-
- stages {
+  stages {
     stage('Test Cronjob Pipeline') {
       when {
         branch 'master'
@@ -45,5 +46,5 @@ pipeline {
         sh "python /opt/app/main.py"
       }
     }
-    }
+  }
 }

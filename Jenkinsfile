@@ -33,9 +33,9 @@ pipeline {
   }
 
   options {
-    buildDiscarder(logRotator(numToKeepStr: '100'))
-    disableConcurrentBuilds()
-    ansiColor('xterm')
+    //buildDiscarder(logRotator(numToKeepStr: '100'))
+    //disableConcurrentBuilds()
+    //ansiColor('xterm')
   }
 
  stages {

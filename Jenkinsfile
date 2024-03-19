@@ -32,11 +32,11 @@ pipeline {
     PYTHONUNBUFFERED = 1
   }
 
-  options {
+  //options {
     //buildDiscarder(logRotator(numToKeepStr: '100'))
     //disableConcurrentBuilds()
     //ansiColor('xterm')
-  }
+  //}
 
  stages {
     stage('Test Cronjob Pipeline') {

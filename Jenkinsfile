@@ -18,7 +18,7 @@ pipeline {
 
   environment {
     
-    NAME = MELIHTEKE
+    //NAME = MELIHTEKE
     // Work in production environment
     PROD_ENVIRONMENT = true
 

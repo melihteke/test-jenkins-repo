@@ -3,12 +3,10 @@
 pipeline {
 
   agent {
-    // the following will essentially perform a `docker build`, and run all stages (below) in that container.
-  dockerfile true
-         //dockerfile {
-         //additionalBuildArgs '--no-cache'
-         //}
-  }
+      docker {
+        file 'Dockerfile'
+      }
+    }
 
   triggers {
     // https://www.jenkins.io/doc/book/pipeline/syntax/#cron-syntax

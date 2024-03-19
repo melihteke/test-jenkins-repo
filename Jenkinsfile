@@ -33,7 +33,13 @@ pipeline {
     // Disabling buffered console output
     PYTHONUNBUFFERED = 1
   }
-
+  
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '100'))
+    disableConcurrentBuilds()
+    ansiColor('xterm')
+  }
+  
   stages {
     stage('Test Cronjob Pipeline') {
       when {

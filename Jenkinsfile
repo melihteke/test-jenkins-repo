@@ -27,9 +27,6 @@ pipeline {
     // Work in production environment
     PROD_ENVIRONMENT = true
 
-    // Set this to true to disable dry run (create devices in DNAC and DNS entries in BlueCat)
-    JUST_DO_IT = true
-
     // Uncomment this to see verbose output in Jenkins
     VERBOSE = true
 

@@ -3,6 +3,7 @@ FROM python:3.9.5-slim-buster
 COPY requirements.txt /opt/app/requirements.txt
 WORKDIR /opt/app/
 
+USER mely
 
 RUN apt-get update && apt-get install -y openssh-client gcc python3-dev
 

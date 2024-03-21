@@ -3,9 +3,8 @@
 pipeline {
 
   agent {
-    dockerfile {
-         additionalBuildArgs '--no-cache'
-         }
+        dockerfile true
+    }
     }
 
   triggers {

@@ -5,7 +5,6 @@ pipeline {
   agent {
         dockerfile true
     }
-    }
 
   triggers {
     // @midnight actually means some time between 12:00 AM and 2:59 AM.

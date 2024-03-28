@@ -40,9 +40,6 @@ pipeline {
   
   stages {
     stage('Test Cronjob Pipeline') {
-      when {
-        branch 'master'
-      }
       steps {
         sh "python /opt/app/main.py"
       }

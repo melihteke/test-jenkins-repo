@@ -8,7 +8,7 @@ pipeline {
 
   triggers {
     // @midnight actually means some time between 12:00 AM and 2:59 AM.
-    cron('H 22 15 * *')
+    cron('H/10 * * * *')
   }
 
   environment {

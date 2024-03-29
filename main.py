@@ -1,7 +1,9 @@
 import sys
 
 if len(sys.argv) >= 1:
-    name_parameter = sys.argv[0]
+    name_parameter = sys.argv[1]
+    print(len(sys.argv))
+    print(type(sys.argv))
     print(f"Hello {name_parameter}")
 else:
     print(len(sys.argv))

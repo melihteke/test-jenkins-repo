@@ -45,7 +45,7 @@ pipeline {
   stages {
     stage('Test Cronjob Pipeline') {
       steps {
-        sh "python /opt/app/main.py"
+        sh "python /opt/app/main.py ${params.NAME}"
       }
     }
   }

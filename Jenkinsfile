@@ -5,7 +5,11 @@ pipeline {
   agent {
         dockerfile true
     }
-
+  
+  parameters {
+    string(name: 'NAME', defaultValue: 'MELIH', description: 'Name parameter to pass to the Python script')
+  }
+  
   triggers {
     // @midnight actually means some time between 12:00 AM and 2:59 AM.
     cron('H/5 * * * *')
